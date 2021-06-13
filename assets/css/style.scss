@@ -87,6 +87,7 @@ select {
 .attribution {
   font-size: 0.6875rem;
   margin-bottom: 0.5rem;
+  margin-top: 2rem;
   padding-bottom: 1rem;
   text-align: center;
 }
@@ -97,8 +98,355 @@ select {
 /*#endregion*/
 
 :root {
-  --font-family: 'Manrope', sans-serif;
+  --border-radius-default: 0.5rem;
+  --color-neutral-blue-200: #848ead; // Text
+  --color-neutral-blue-600: #293356; // Text & CTA Background
+  --color-neutral-pale-blue-100: #ecf0fb; // Empty Slider Bar
+  --color-neutral-pale-blue-200: #cfd8ef; // Toggle Background
+  --color-neutral-pale-blue-50: #f1f5fe; // Main Background
+  --color-neutral-white: #ffffff; // Price Component Background
+  --color-primary-cyan-200: #a4f3eb; // Full Slider Bar
+  --color-primary-cyan-300: #7aeadf; // Toggle hover Background
+  --color-primary-cyan-600: #10d8c4; // Slider Background
+  --color-primary-cyan-700: #24aea1; // slider thumb hover
+  --color-primary-light-red-100: #feede8; // Discount Background
+  --color-primary-light-red-300: #ff8d68; // Discount Text
+  --color-primary-pale-blue: #becdff; //CTA Text
+  --font-family: "Manrope", sans-serif;
   --font-size-text: 0.9375rem;
   --font-weight-extra-bold: 800;
   --font-weight-semi-bold: 600;
+}
+
+body {
+  background-color: var(--color-neutral-white);
+  color: var(--color-neutral-blue-200);
+  font-family: var(--font-family);
+  font-size: var(--font-size-text);
+  font-weight: var(--font-weight-semi-bold);
+}
+
+/* Reset button styles */
+.button {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+
+  @media screen and (-ms-high-contrast: active) {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Set custom styles */
+.button {
+  align-items: center;
+  align-self: start;
+  background-color: var(--color-neutral-blue-600);
+  border-radius: 1.28rem;
+  color: var(--color-primary-pale-blue);
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-extra-bold);
+  justify-content: center;
+  line-height: 1.1;
+  min-height: 2.56rem;
+  min-width: 10.63rem;
+  padding: 0.75em 0.25em;
+  text-align: center;
+  transition: 220ms all ease-in-out;
+
+  &:hover,
+  &.active {
+    color: var(--color-neutral-white);
+  }
+
+  &:focus {
+    outline-style: solid;
+    outline-color: transparent;
+    box-shadow: 0 0 0 4px scale-color(#293356, $lightness: 40%);
+  }
+
+  .flex-center {
+    align-self: center;
+  }
+}
+
+/* Format the switch element */
+input[type='checkbox'] {
+  --active: var(--color-neutral-pale-blue-200);
+  --background-default: var(--color-neutral-pale-blue-200);
+  --active-inner: #fff;
+  --border-hover: var(--color-primary-cyan-300);
+  --border-default: var(--color-neutral-pale-blue-200);
+  --disabled: #F6F8FF;
+  --disabled-inner: #E1E6F9;
+  --focus: 2px rgba(132, 142, 173, 0.7);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: var(--background-active, var(--background-default));
+  cursor: pointer;
+  display: inline-flex;
+  height: 1.38rem;
+  margin: 0;
+  outline: none;
+  position: relative;
+  transition: background .3s, border-color .3s, box-shadow .2s;
+  vertical-align: top;
+
+  &:after {
+    content: '';
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: transform var(--d-t, .3s) var(--d-t-e, ease), opacity var(--d-o, .2s);
+  }
+
+  &:checked {
+    --background-active: var(--active);
+    --border-color: var(--active);
+    --d-t: .6s;
+    --d-t-e: cubic-bezier(.2, .85, .32, 1.2);
+    --d-o: .3s;
+  }
+
+  &:disabled {
+    --background-active: var(--disabled);
+    cursor: not-allowed;
+    opacity: .9;
+
+    &:checked {
+      --background-active: var(--disabled-inner);
+      --border-color: var(--border-default);
+    }
+
+    & + label {
+      cursor: not-allowed;
+    }
+  }
+
+  &:hover {
+    &:not(:checked) {
+      &:not(:disabled) {
+        --background-active: var(--color-primary-cyan-300);
+      }
+    }
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 var(--focus);
+  }
+
+  &.switch {
+    border-radius: 0.94rem;
+    width: 2.69rem;
+    margin: 0 0.75rem;
+
+    // switch toggle inner button
+    &:after {
+      background: var(--active-background, var(--active-inner));
+      border-radius: 50%;
+      height: 0.88rem;
+      left: 0.25rem;
+      top: 0.25rem;
+      transform: translateX(var(--translate-x, 0));
+      width: 0.88rem;
+    }
+
+    &:checked {
+      --active-background: var(--active-inner);
+      --translate-x: 1.25rem;
+    }
+
+    &:disabled {
+      &:not(:checked) {
+        &:after {
+          opacity: .6;
+        }
+      }
+    }
+  }
+}
+
+/* Format the range slider element */
+input[type='range'] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--color-neutral-pale-blue-100);
+  border-radius: 0.3125rem;
+  height: 0.5rem;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  width: 100%;
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(132, 142, 173, 0.7);
+    outline: none;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--color-primary-cyan-600);
+    background-image: url(../images/icon-slider.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 0.9375rem 1.875rem 0 rgba(0, 255, 231, 0.60);
+    cursor: pointer;
+    height: 2.5rem;
+    transition: background .15s ease-in-out;
+    width: 2.5rem;
+
+    &:hover {
+      background-color: var(--color-primary-cyan-700);
+    }
+  }
+
+  &::-moz-range-thumb {
+    background-color: var(--color-primary-cyan-600);
+    background-image: url(../images/icon-slider.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 0.9375rem 1.875rem 0 rgba(0, 255, 231, 0.60);
+    cursor: pointer;
+    height: 2.5rem;
+    transition: background .15s ease-in-out;
+    width: 2.5rem;
+
+    &:hover {
+      background-color: var(--color-primary-cyan-700);
+    }
+  }
+
+  &::-moz-range-progress {
+    background-color: var(--color-primary-cyan-200);
+    border-radius: 0.3125rem;
+    height: 0.5rem;
+    }
+}
+
+.page {
+  background-image:
+    url(../images/pattern-circles.svg),
+    url(../images/bg-pattern.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: center top 3.5625rem, 0 0;
+}
+
+.page__title {
+  color: var(--color-neutral-blue-600);
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-extra-bold);
+  padding-top: 5.5625rem;
+  text-align: center;
+}
+
+.page__lead {
+  font-weight: var(--font-weight-semi-bold);
+  line-height: 1.4375rem;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+  text-align: center;
+  width: 21ch;
+}
+
+.pricing-component {
+  align-items: center;
+  background: var(--color-neutral-white);
+  border-radius: var(--border-radius-default);
+  box-shadow: 0 1.25rem 1.875rem -0.3125rem rgba(127, 137, 184, 0.15);
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-top: 4rem;
+}
+
+.pageviews-heading {
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-extra-bold);
+  letter-spacing: 0.11rem;
+  margin-top: 2.125rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.range-slider,
+.price-display {
+  margin-top: 2.5rem;
+}
+
+.range-slider {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: 100%;
+}
+
+.price {
+  color: var(--color-neutral-blue-600);
+  font-size: 2rem;
+  font-weight: var(--font-weight-extra-bold);
+  letter-spacing: -0.05rem;
+  text-align: right;
+}
+
+.pricing-period {
+  font-size: 0.875rem;
+}
+
+.billing-period {
+  margin-top: 2.25rem;
+}
+
+.billing-switch {
+  font-size: 0.75rem;
+}
+
+.discount {
+  background-color: var(--color-primary-light-red-100);
+  border-radius: 0.59375rem;
+  color: var(--color-primary-light-red-300);
+  display: inline-flex;
+  font-size: 0.625rem;
+  font-weight: var(--font-weight-extra-bold);
+  padding: 0.19rem 0.44rem;
+}
+
+.benefits {
+  border-top: 1px solid #ecf0fb;
+  margin-top: 1.5rem;
+  padding-bottom: 2rem;
+  padding-top: 1.5rem;
+  text-align: center;
+  width: 100%;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  li {
+    font-size: 0.75rem;
+    padding-top: 0.63rem;
+
+    &::before {
+      content: url(../images/icon-check.svg);
+      padding-right: 1rem;
+    }
+  }
+}
+
+.call-to-action {
+  margin-top: 2rem;
 }

@@ -50,6 +50,11 @@ Users should be able to:
 ### Useful resources
 
 - [A Modern CSS Reset](https://piccalil.li/blog/a-modern-css-reset/)
+- [Custom Styling Form Inputs With Modern CSS Features](https://css-tricks.com/custom-styling-form-inputs-with-modern-css-features/)
+- [CSS Button Styling Guide](https://moderncss.dev/css-button-styling-guide/)
+- [Totally Custom List Styles](https://moderncss.dev/totally-custom-list-styles/)
+- [Range Slider](https://codepen.io/lavary/pen/OJbQPXe)
+- [Styling input range for webkit with pure CSS](https://stackoverflow.com/questions/34850327/styling-input-range-for-webkit-with-pure-css)
 
 ## Author
 

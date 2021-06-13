@@ -12,27 +12,32 @@
   </head>
   <body>
     <div class="page">
-      <h1>Simple, traffic-based pricing</h1>
-      <p>Sign-up for our 30-day trial. No credit card required.</p>
+      <h1 class="page__title">Simple, traffic-based pricing</h1>
+      <p class="page__lead">Sign-up for our 30-day trial. No credit card required.</p>
       <div class="pricing-component">
         <h2 class="pageviews-heading">
-          <span id="pageview_count"></span> Pageviews
+          <span id="pageview-count">100K</span> Pageviews
         </h2>
-        <div id="slider-control"></div>
-        <div>
-          <span id="price">$16.00</span> /<span id="pricing-period">month</span>
+        <div class="range-slider">
+          <input class="range" type="range" step="40000" min="10000" max="1000000" value="100000" id="slider-control">
         </div>
-        <div>
-          Monthly Billing
-          Yearly Billing 25% discount
+        <div class="price-display">
+          <span class="price" id="price">$16.00</span> / <span class="pricing-period" id="pricing-period">month</span>
         </div>
-        <div class="key-benefits">
-          <ul>
+        <div class="billing-period">
+          <label class="billing-switch" for="billing-switch">
+            Monthly Billing
+            <input type="checkbox" name="billing-switch" class="switch" id="billing-switch">
+            Yearly Billing <span class="discount">-25%</span>
+          </label>
+        </div>
+        <div class="benefits">
+          <ul role="list">
             <li>Unlimited websites</li>
             <li>100% data ownership</li>
             <li>Email reports</li>
           </ul>
-          <button type="button">
+          <button class="button call-to-action" type="button">
             Start my trial
           </button>
         </div>
