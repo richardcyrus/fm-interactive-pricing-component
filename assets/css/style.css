@@ -121,7 +121,7 @@ select {
 }
 
 body {
-  background-color: var(--color-neutral-white);
+  background-color: #f9faff;
   color: var(--color-neutral-blue-200);
   font-family: var(--font-family);
   font-size: var(--font-size-text);
@@ -189,8 +189,8 @@ input[type=checkbox] {
   --active-inner: #fff;
   --border-hover: var(--color-primary-cyan-300);
   --border-default: var(--color-neutral-pale-blue-200);
-  --disabled: #F6F8FF;
-  --disabled-inner: #E1E6F9;
+  --disabled: #f6f8ff;
+  --disabled-inner: #e1e6f9;
   --focus: 2px rgba(132, 142, 173, 0.7);
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -224,9 +224,9 @@ input[type=checkbox]:after {
 input[type=checkbox]:checked {
   --background-active: var(--active);
   --border-color: var(--active);
-  --d-t: .6s;
-  --d-t-e: cubic-bezier(.2, .85, .32, 1.2);
-  --d-o: .3s;
+  --d-t: 0.6s;
+  --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
+  --d-o: 0.3s;
 }
 input[type=checkbox]:disabled {
   --background-active: var(--disabled);
@@ -394,6 +394,15 @@ input[type=range]::-moz-range-progress {
   width: 100%;
 }
 
+.price-display {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .price {
   color: var(--color-neutral-blue-600);
   font-size: 2rem;
@@ -404,6 +413,7 @@ input[type=range]::-moz-range-progress {
 
 .pricing-period {
   font-size: 0.875rem;
+  padding-left: 0.625rem;
 }
 
 .billing-period {
@@ -451,5 +461,103 @@ input[type=range]::-moz-range-progress {
 
 .call-to-action {
   margin-top: 2rem;
+}
+
+/* 576px */
+@media screen and (min-width: 36em) {
+  .page {
+    background-position: center top 4.1875rem, 0 0;
+  }
+
+  .page__title {
+    font-size: 1.75rem;
+    padding-top: 6.5rem;
+  }
+
+  .page__lead {
+    width: 100%;
+  }
+
+  .pricing-component {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: grid;
+    grid-template-areas: "pageview cost" "slider slider" "billperiod billperiod" "benefits benefits";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5.6875rem;
+    max-width: 33.75rem;
+    padding-top: 2.5rem;
+  }
+
+  .pageviews-heading {
+    font-size: 0.875rem;
+    grid-area: pageview;
+    justify-self: start;
+    letter-spacing: 0.125rem;
+    margin: 0;
+    padding-left: 3rem;
+  }
+
+  .price-display {
+    grid-area: cost;
+    justify-self: end;
+    margin: 0;
+    padding-right: 3rem;
+  }
+
+  .price {
+    font-size: 2.5rem;
+    letter-spacing: -0.0625rem;
+  }
+
+  .pricing-period {
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    text-align: center;
+  }
+
+  .range-slider {
+    grid-area: slider;
+    justify-self: center;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .billing-period {
+    grid-area: billperiod;
+    justify-self: center;
+  }
+  .billing-period [data-alt-text] > span {
+    display: none;
+  }
+  .billing-period [data-alt-text]::before {
+    content: attr(data-alt-text);
+  }
+
+  .benefits {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: grid;
+    grid-area: benefits;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+  }
+  .benefits ul {
+    padding-left: 3rem;
+    text-align: left;
+  }
+  .benefits .call-to-action {
+    -ms-flex-item-align: center;
+        align-self: center;
+    justify-self: center;
+    margin: 0;
+    text-align: initial;
+  }
 }
 /*# sourceMappingURL=style.css.map */

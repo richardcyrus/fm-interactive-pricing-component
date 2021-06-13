@@ -45,16 +45,21 @@ Users should be able to:
 
 - Semantic HTML5 markup
 - CSS custom properties
+- Flexbox
+- CSS Grid
 - Mobile-first workflow
 
 ### Useful resources
 
 - [A Modern CSS Reset](https://piccalil.li/blog/a-modern-css-reset/)
+- [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - [Custom Styling Form Inputs With Modern CSS Features](https://css-tricks.com/custom-styling-form-inputs-with-modern-css-features/)
 - [CSS Button Styling Guide](https://moderncss.dev/css-button-styling-guide/)
 - [Totally Custom List Styles](https://moderncss.dev/totally-custom-list-styles/)
 - [Range Slider](https://codepen.io/lavary/pen/OJbQPXe)
 - [Styling input range for webkit with pure CSS](https://stackoverflow.com/questions/34850327/styling-input-range-for-webkit-with-pure-css)
+- [How to change &lt;span&gt; text in CSS media query](https://stackoverflow.com/questions/55975602/how-to-change-span-text-in-css-media-query)
 
 ## Author
 

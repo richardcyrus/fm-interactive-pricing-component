@@ -119,7 +119,7 @@ select {
 }
 
 body {
-  background-color: var(--color-neutral-white);
+  background-color: #f9faff;
   color: var(--color-neutral-blue-200);
   font-family: var(--font-family);
   font-size: var(--font-size-text);
@@ -174,14 +174,14 @@ body {
 }
 
 /* Format the switch element */
-input[type='checkbox'] {
+input[type="checkbox"] {
   --active: var(--color-neutral-pale-blue-200);
   --background-default: var(--color-neutral-pale-blue-200);
   --active-inner: #fff;
   --border-hover: var(--color-primary-cyan-300);
   --border-default: var(--color-neutral-pale-blue-200);
-  --disabled: #F6F8FF;
-  --disabled-inner: #E1E6F9;
+  --disabled: #f6f8ff;
+  --disabled-inner: #e1e6f9;
   --focus: 2px rgba(132, 142, 173, 0.7);
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -193,30 +193,31 @@ input[type='checkbox'] {
   margin: 0;
   outline: none;
   position: relative;
-  transition: background .3s, border-color .3s, box-shadow .2s;
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
   vertical-align: top;
 
   &:after {
-    content: '';
+    content: "";
     display: block;
     left: 0;
     position: absolute;
     top: 0;
-    transition: transform var(--d-t, .3s) var(--d-t-e, ease), opacity var(--d-o, .2s);
+    transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),
+      opacity var(--d-o, 0.2s);
   }
 
   &:checked {
     --background-active: var(--active);
     --border-color: var(--active);
-    --d-t: .6s;
-    --d-t-e: cubic-bezier(.2, .85, .32, 1.2);
-    --d-o: .3s;
+    --d-t: 0.6s;
+    --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
+    --d-o: 0.3s;
   }
 
   &:disabled {
     --background-active: var(--disabled);
     cursor: not-allowed;
-    opacity: .9;
+    opacity: 0.9;
 
     &:checked {
       --background-active: var(--disabled-inner);
@@ -264,7 +265,7 @@ input[type='checkbox'] {
     &:disabled {
       &:not(:checked) {
         &:after {
-          opacity: .6;
+          opacity: 0.6;
         }
       }
     }
@@ -272,7 +273,7 @@ input[type='checkbox'] {
 }
 
 /* Format the range slider element */
-input[type='range'] {
+input[type="range"] {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -298,10 +299,10 @@ input[type='range'] {
     background-repeat: no-repeat;
     border-radius: 50%;
     border: none;
-    box-shadow: 0 0.9375rem 1.875rem 0 rgba(0, 255, 231, 0.60);
+    box-shadow: 0 0.9375rem 1.875rem 0 rgba(0, 255, 231, 0.6);
     cursor: pointer;
     height: 2.5rem;
-    transition: background .15s ease-in-out;
+    transition: background 0.15s ease-in-out;
     width: 2.5rem;
 
     &:hover {
@@ -316,10 +317,10 @@ input[type='range'] {
     background-repeat: no-repeat;
     border-radius: 50%;
     border: none;
-    box-shadow: 0 0.9375rem 1.875rem 0 rgba(0, 255, 231, 0.60);
+    box-shadow: 0 0.9375rem 1.875rem 0 rgba(0, 255, 231, 0.6);
     cursor: pointer;
     height: 2.5rem;
-    transition: background .15s ease-in-out;
+    transition: background 0.15s ease-in-out;
     width: 2.5rem;
 
     &:hover {
@@ -331,12 +332,11 @@ input[type='range'] {
     background-color: var(--color-primary-cyan-200);
     border-radius: 0.3125rem;
     height: 0.5rem;
-    }
+  }
 }
 
 .page {
-  background-image:
-    url(../images/pattern-circles.svg),
+  background-image: url(../images/pattern-circles.svg),
     url(../images/bg-pattern.svg);
   background-repeat: no-repeat, no-repeat;
   background-position: center top 3.5625rem, 0 0;
@@ -391,6 +391,11 @@ input[type='range'] {
   width: 100%;
 }
 
+.price-display {
+  align-items: center;
+  display: flex;
+}
+
 .price {
   color: var(--color-neutral-blue-600);
   font-size: 2rem;
@@ -401,6 +406,7 @@ input[type='range'] {
 
 .pricing-period {
   font-size: 0.875rem;
+  padding-left: 0.625rem;
 }
 
 .billing-period {
@@ -449,4 +455,105 @@ input[type='range'] {
 
 .call-to-action {
   margin-top: 2rem;
+}
+
+/* 576px */
+@media screen and (min-width: 36em) {
+  .page {
+    background-position: center top 4.1875rem, 0 0;
+  }
+
+  .page__title {
+    font-size: 1.75rem;
+    padding-top: 6.5rem;
+  }
+
+  .page__lead {
+    width: 100%;
+  }
+
+  .pricing-component {
+    align-items: center;
+    display: grid;
+    grid-template-areas:
+      "pageview cost"
+      "slider slider"
+      "billperiod billperiod"
+      "benefits benefits";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5.6875rem;
+    max-width: 33.75rem;
+    padding-top: 2.5rem;
+  }
+
+  .pageviews-heading {
+    font-size: 0.875rem;
+    grid-area: pageview;
+    justify-self: start;
+    letter-spacing: 0.125rem;
+    margin: 0;
+    padding-left: 3rem;
+  }
+
+  .price-display {
+    grid-area: cost;
+    justify-self: end;
+    margin: 0;
+    padding-right: 3rem;
+  }
+
+  .price {
+    font-size: 2.5rem;
+    letter-spacing: -0.0625rem;
+  }
+
+  .pricing-period {
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    text-align: center;
+  }
+
+  .range-slider {
+    grid-area: slider;
+    justify-self: center;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .billing-period {
+    grid-area: billperiod;
+    justify-self: center;
+
+    [data-alt-text] > span {
+      display: none;
+    }
+
+    [data-alt-text]::before {
+      content: attr(data-alt-text);
+    }
+  }
+
+  .benefits {
+    align-items: center;
+    display: grid;
+    grid-area: benefits;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+
+    ul {
+      padding-left: 3rem;
+      text-align: left;
+    }
+
+    .call-to-action {
+      align-self: center;
+      justify-self: center;
+      margin: 0;
+      text-align: initial;
+    }
+  }
 }
