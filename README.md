@@ -48,6 +48,7 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
+- Vanilla JavaScript
 
 ### Useful resources
 

@@ -16,13 +16,15 @@
       <p class="page__lead">Sign-up for our 30-day trial. No credit card required.</p>
       <div class="pricing-component">
         <h2 class="pageviews-heading">
-          <span id="pageview-count">100K</span> Pageviews
+          <label for="slider-control">
+            <span id="pageview-count">10K</span> Pageviews
+          </label>
         </h2>
         <div class="range-slider">
-          <input class="range" type="range" step="40000" min="10000" max="1000000" value="100000" id="slider-control">
+          <input type="range" id="slider-control" name="pageviews" min="0" max="4" step="1" value="0" class="range">
         </div>
         <div class="price-display">
-          <span class="price" id="price">$16.00</span><span class="pricing-period">/ <span id="pricing-period">month</span></span>
+          <span class="price" id="price">$8.00</span><span class="pricing-period">/ <span id="pricing-period">month</span></span>
         </div>
         <div class="billing-period">
           <label class="billing-switch" for="billing-switch">
