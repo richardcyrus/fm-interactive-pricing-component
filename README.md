@@ -28,6 +28,9 @@ Users should be able to:
 
 ### Screenshot
 
+- [Mobile](./design/screenshots/mobile-screenshot.jpg)
+- [Desktop](./design/screenshots/desktop-screenshot.jpg)
+
 #### Reference Images
 
 - [Mobile](./design/reference/mobile-design.jpg)
