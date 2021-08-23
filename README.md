@@ -39,7 +39,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://github.com/richardcyrus/fm-interactive-pricing-component)
+- [Solution URL](https://www.frontendmentor.io/solutions/interactive-pricing-component-html-css-vanillajs-RpTBbk6eH)
+- [Repository URL](https://github.com/richardcyrus/fm-interactive-pricing-component)
 - [Live Site URL](https://richardcyrus.github.io/fm-interactive-pricing-component)
 
 ## My process
@@ -68,4 +69,4 @@ Users should be able to:
 ## Author
 
 - Website - [www.richardcyrus.com](https://www.richardcyrus.com)
-- Frontend Mentor - [@richarcyrus](https://www.frontendmentor.io/profile/richarcyrus)
+- Frontend Mentor - [@richardcyrus](https://www.frontendmentor.io/profile/richardcyrus)
